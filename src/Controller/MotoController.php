@@ -33,8 +33,8 @@ class MotoController
     public function getByType($type)
     {
         //echo "ROUTE: /moto/$type   (getByType)";
-        $moto = $this->motoManager->findByType($type);
-        include(__DIR__ . "/../../Templates/moto/details.php");
+        $motos = $this->motoManager->findByType($type);
+        include(__DIR__ . "/../../Templates/moto/index.php");
     }
 
     // Route: /moto/add/

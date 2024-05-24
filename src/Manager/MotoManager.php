@@ -39,13 +39,16 @@ class MotoManager extends DataBaseManager
     {
         $query = $this->getConnection()->prepare("SELECT * FROM moto WHERE type = :type");
         $query->execute([":type" => $type]);
-        $reponse = $query->fetch();
-        if($reponse === false){
-            return $reponse;  
-            
+        $results = $query->fetchAll();
+        
+            $motos = [];
+            foreach ($results as $result) {
+              $motos[] = Moto ::fromArray($result);
+            }
+    
+            return $motos;
         }
-        return Moto::fromArray($reponse);
-    }
+    
     
     public function add(Moto $moto)
     {

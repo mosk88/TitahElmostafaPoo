@@ -11,17 +11,16 @@
 
 <body class="bg-dark text-bg-danger text-center d-flex justify-content-center flex-wrap    ">
     <div>
-        <form action="" method="post">
+       
             <p><?php echo $moto->getBrand(); ?></p>
             <img src="<?php echo $moto->getImage(); ?>" width="50%" alt="moto">
             <p><?php echo $moto->getModel(); ?></p>
             <p><?php echo $moto->getType(); ?></p>
             <p><?php echo $moto->getPrice() . " € "; ?></p>
-            <form action=" http://localhost/TitahElmostafaPoo/index.php/moto/delete/"
-                <?php echo ($moto->getId()) ?> method="POST" onsubmit="return confirm('Êtes vous sur de vouloir supprimer ?');">
+            <form action=" http://localhost/TitahElmostafaPoo/index.php/moto/delete/<?php echo ($moto->getId()) ?>" method="POST" onsubmit="return confirm('Êtes vous sur de vouloir supprimer ?');">
                 <input class="btn btn-danger" type="submit" value="Supprimer">
             </form>
 
-        </form>
+      
 
     </div>

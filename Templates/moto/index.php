@@ -2,7 +2,7 @@
 
 foreach($motos as $moto){?>
 <div class="container col-4     ">
-    <p><?php echo $moto->getBrand(); ?></p>
+    <h1><?php echo $moto->getBrand(); ?></h1>
     <img src="<?php echo $moto->getImage(); ?>" width="50%" height="50%" alt="moto">
     <p><?php echo $moto->getModel(); ?></p>
     <p><?php echo $moto->getType(); ?></p>
